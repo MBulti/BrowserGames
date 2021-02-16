@@ -6,30 +6,30 @@ window.onload=function() {
 	document.addEventListener("keydown",keyPush);
 	setInterval(game,1000/15);
 }
-px=py=10;
 gs=tc=20;
-ax=ay=15;
-xv=yv=0;
+xPlayer=yPlayer=10;
+xApple=yApple=15;
+xSpeed=ySpeed=0;
 trail=[];
 tail = 5;
 function game() {
-	px+=xv;
-	py+=yv;
-	if(px<0) 
+	xPlayer+=xSpeed;
+	yPlayer+=ySpeed;
+	if(xPlayer<0) 
     {
-		px= tc-1;
+		xPlayer= tc-1;
 	}
-	if(px>tc-1) 
+	if(xPlayer>tc-1) 
     {
-		px= 0;
+		xPlayer= 0;
 	}
-	if(py<0) 
+	if(yPlayer<0) 
     {
-		py= tc-1;
+		yPlayer= tc-1;
 	}
-	if(py>tc-1) 
+	if(yPlayer>tc-1) 
     {
-		py= 0;
+		yPlayer= 0;
 	}
 	ctx.fillStyle="black";
 	ctx.fillRect(0,0,canv.width,canv.height);
@@ -37,49 +37,49 @@ function game() {
 	ctx.fillStyle="lime";
 	for(var i=0;i<trail.length;i++) {
 		ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
-		if(trail[i].x==px && trail[i].y==py) {
+		if(trail[i].x==xPlayer && trail[i].y==yPlayer) {
 			tail = 5;
 		}
 	}
-	trail.push({x:px,y:py});
+	trail.push({x:xPlayer,y:yPlayer});
 	while(trail.length>tail) {
 	trail.shift();
 	}
 
-	if(ax==px && ay==py) {
+	if(xApple==xPlayer && yApple==yPlayer) {
 		tail++;
-		ax=Math.floor(Math.random()*tc);
-		ay=Math.floor(Math.random()*tc);
+		xApple=Math.floor(Math.random()*tc);
+		yApple=Math.floor(Math.random()*tc);
 	}
 	ctx.fillStyle="red";
-	ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+	ctx.fillRect(xApple*gs,yApple*gs,gs-2,gs-2);
 }
 function keyPush(evt) 
 {
 	switch(evt.keyCode) 
     {
 		case 37:
-			if(xv != 1)
+			if(xSpeed != 1)
 			{
-				xv=-1;yv=0;
+				xSpeed=-1;ySpeed=0;
 			}
 			break;
 		case 38:
-			if(yv != 1)
+			if(ySpeed != 1)
 			{
-				xv=0;yv=-1;
+				xSpeed=0;ySpeed=-1;
 			}
 			break;
 		case 39:
-			if(xv != -1)
+			if(xSpeed != -1)
 			{
-				xv=1;yv=0;
+				xSpeed=1;ySpeed=0;
 			}
 			break;
 		case 40:
-			if(yv != -1)
+			if(ySpeed != -1)
 			{
-				xv=0;yv=1;
+				xSpeed=0;ySpeed=1;
 			}
 			break;
 	}
