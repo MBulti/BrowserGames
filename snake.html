@@ -7,11 +7,12 @@ window.onload=function() {
 	setInterval(game,1000/15);
 }
 gridSize=tileCount=20;
+tailCount=10;
 xPlayer=yPlayer=10;
 xApple=yApple=15;
 xSpeed=ySpeed=0;
 trail=[];
-tail = 5;
+tail = tailCount;
 function game() {
 	xPlayer+=xSpeed;
 	yPlayer+=ySpeed;
@@ -38,7 +39,7 @@ function game() {
 	for(var i=0;i<trail.length;i++) {
 		ctx.fillRect(trail[i].x*gridSize,trail[i].y*gridSize,gridSize-2,gridSize-2);
 		if(trail[i].x==xPlayer && trail[i].y==yPlayer) {
-			tail = 5;
+			tail = tailCount;
 		}
 	}
 	trail.push({x:xPlayer,y:yPlayer});
