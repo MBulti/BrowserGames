@@ -3,6 +3,7 @@
 px=py=200;
 xv=yv=0;
 grav=0.5;
+platformCount=30;
 onG=false;
 holdLeft=holdRight=false;
 plat=[];
@@ -12,7 +13,7 @@ window.onload=function() {
 	setInterval(update,1000/30);
 	document.addEventListener("keydown",keyDown);
 	document.addEventListener("keyup",keyUp);
-	for(i=0;i<50;i++) {
+	for(i=0;i<platformCount;i++) {
 		plat.push(
             {
                 x:Math.random()*canv.width,
@@ -39,7 +40,7 @@ function update() {
 	}
 
 	onG=false;
-	for(i=0;i<50;i++) {
+	for(i=0;i<platformCount;i++) {
 		if(px>plat[i].x && px<plat[i].x+plat[i].w &&
 			py>plat[i].y && py<plat[i].y+plat[i].h) {
 			py=plat[i].y;
@@ -49,8 +50,9 @@ function update() {
 
 	ctx.fillStyle="black";
 	ctx.fillRect(0,0,canv.width,canv.height);
-	ctx.fillStyle="white";
+	ctx.fillStyle="red";
 	ctx.fillRect(px-5,py-20,10,20);
+	ctx.fillStyle="white";
 	for(i=0;i<50;i++) {
 		ctx.fillRect(plat[i].x,plat[i].y,plat[i].w,plat[i].h);
 	}
