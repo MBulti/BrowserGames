@@ -56,7 +56,7 @@ function game() {
 	ctx.fillStyle="red";
 	ctx.fillRect(xApple*gridSize,yApple*gridSize,gridSize-2,gridSize-2);
 
-	document.getElementById('score').innerHTML = "Score: " + myScore;
+	document.getElementById('score').innerHTML = myScore;
 }
 function keyPush(evt) 
 {
