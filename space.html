@@ -54,19 +54,19 @@
     }
     function keyPush(evt) {
         switch(evt.keyCode) {
-            case 32:
+            case 32: //space
                 sl.push({x:px,y:py});
                 break;
-            case 37:
+            case 37: //left
                 px-=ps;
                 break;
-            case 38:
+            case 38: //up
                 py-=ps;
                 break;
-            case 39:
+            case 39: //right
                 px+=ps;
                 break;
-            case 40:
+            case 40: //down
                 py+=ps;
                 break;
         }
