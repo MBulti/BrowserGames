@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="h-75" lang="en">
+<html class="" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,9 +8,9 @@
 
     <title>Snake by Bulti</title>
   </head>
-  <body class="h-100 bg-secondary">
+  <body class="bg-secondary">
 	<!-- Image and text -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="mb-2 navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="index.html">Bultis Games</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,29 +27,56 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container h-100">
-		<div class="d-flex h-75 justify-content-center align-items-center">
-			<canvas class="border border-5 border-success" id="gc" width="400" height="400"></canvas>
-			<div class="card ms-3">
-				<div class="card-header">
-					<h2>Score</h2>
+	<div class="container">
+			<div class="row">
+				<div class="col">
 				</div>
-				<div class="card-body">
-					<label class="fs-2" id="score"></label>
+				<div class="col">
+					<canvas class="border border-5 border-success" id="gc" width="400" height="400"></canvas><br>
 				</div>
-				<div class="card-footer">
-
+				<div class="col">
 				</div>
 			</div>
-			<table class="scoretable">
-				<tr>
-					<th>Name</th>
-					<th>Score</th>
-				</tr>
-			</table>
+			<div class="row">
+				<div class="col">
+				</div>
+				<div class="col-2">
+					<div class="card">
+						<div class="card-header">
+						</div>
+						<div class="card-body">
+							<label class="fs-2">Score:&nbsp;</label><label class="fs-2" id="score"></label>
+						</div>
+						<div class="card-footer">
+						</div>
+					</div>
+				</div>
+				<div class="col">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+				</div>
+				<div class="col mt-2 col-4">
+					<div class="card">
+						<div class="card-header">
+							<h2>Highscores</h2>
+						</div>
+						<div class="card-body">
+							<table class="table table-striped scoretable">
+								<tr>
+									<th>Name</th>
+									<th>Score</th>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+				</div>
+			</div>
 		</div>
 	</div>
-	
 	<script src="packages/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
