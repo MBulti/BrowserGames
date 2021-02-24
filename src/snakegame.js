@@ -60,6 +60,7 @@ function game() {
 }
 function keyPush(evt) 
 {
+	evt.preventDefault();
 	switch(evt.keyCode) 
     {
 		case 37:
