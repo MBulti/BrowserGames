@@ -8,6 +8,11 @@
         setInterval(game,1000/15);
     }
 
+    function jump()
+    {
+
+    }
+
     function game() 
     {
         ctx.fillStyle="black";
@@ -16,6 +21,10 @@
     }
     function keyPush(evt) 
     {
-
+        switch(evt.keyCode) {
+            case 32: //space
+                jump();
+                break;
+        }
     }
     </script>
