@@ -60,7 +60,6 @@ function game() {
 }
 function keyPush(evt) 
 {
-	evt.preventDefault();
 	switch(evt.keyCode) 
     {
 		case 37:
@@ -69,6 +68,7 @@ function keyPush(evt)
 				xSpeed=-1;
 				ySpeed=0;
 			}
+			evt.preventDefault();
 			break;
 		case 38:
 			if(ySpeed != 1)
@@ -76,6 +76,7 @@ function keyPush(evt)
 				xSpeed=0;
 				ySpeed=-1;
 			}
+			evt.preventDefault();
 			break;
 		case 39:
 			if(xSpeed != -1)
@@ -83,6 +84,7 @@ function keyPush(evt)
 				xSpeed=1;
 				ySpeed=0;
 			}
+			evt.preventDefault();
 			break;
 		case 40:
 			if(ySpeed != -1)
@@ -90,6 +92,7 @@ function keyPush(evt)
 				xSpeed=0;
 				ySpeed=1;
 			}
+			evt.preventDefault();
 			break;
 	}
 }
